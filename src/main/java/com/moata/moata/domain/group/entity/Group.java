@@ -5,11 +5,15 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
 
-@AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Getter
 @Entity
+@Getter
+@Table(name = "user_group")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@DynamicInsert
 public class Group {
 
     @Id
@@ -24,9 +28,11 @@ public class Group {
     private String favoriteArea;
 
     @Column(name = "co_owner_max")
+    @ColumnDefault("0")
     private int coOwnerMax;
 
     @Column(name = "car_use_frequency")
+    @ColumnDefault("0")
     private int carUseFrequency;
 
     @Column(name = "car_type")
