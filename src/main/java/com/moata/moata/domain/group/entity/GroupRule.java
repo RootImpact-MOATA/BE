@@ -1,13 +1,11 @@
 package com.moata.moata.domain.group.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
+@Builder
 @Table(name = "group_rule")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor

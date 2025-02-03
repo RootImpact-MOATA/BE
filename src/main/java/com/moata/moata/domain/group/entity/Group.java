@@ -2,15 +2,13 @@ package com.moata.moata.domain.group.entity;
 
 import com.moata.moata.domain.user.entity.User;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 
 @Entity
 @Getter
+@Builder
 @Table(name = "user_group")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor

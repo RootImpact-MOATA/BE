@@ -1,17 +1,16 @@
 package com.moata.moata.domain.reservation.entity;
 
+import com.moata.moata.constant.RideSharingRole;
 import com.moata.moata.domain.group.entity.Group;
 import com.moata.moata.domain.user.entity.User;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Builder
 @Table(name = "reservation")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor

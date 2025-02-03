@@ -2,15 +2,13 @@ package com.moata.moata.domain.article.entity;
 
 import com.moata.moata.domain.group.entity.Group;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Builder
 @Table(name = "article")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
