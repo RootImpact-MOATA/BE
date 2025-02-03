@@ -1,6 +1,5 @@
 package com.moata.moata.domain.article.entity;
 
-import com.moata.moata.domain.group.entity.Group;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
