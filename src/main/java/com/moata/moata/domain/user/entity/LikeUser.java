@@ -1,6 +1,5 @@
 package com.moata.moata.domain.user.entity;
 
-import com.moata.moata.domain.group.entity.Group;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -20,9 +19,10 @@ public class LikeUser {
     private long likeId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "liker_id", nullable = false)
+    private User likerId;
 
-    @Column(name = "liked_id", nullable = false)
-    private long likedId;
+    @ManyToOne
+    @JoinColumn(name = "target_id", nullable = false)
+    private User targetId;
 }

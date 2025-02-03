@@ -1,5 +1,6 @@
 package com.moata.moata.domain.group.entity;
 
+import com.moata.moata.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -21,8 +22,9 @@ public class Group {
     @Column(name = "group_id", nullable = false)
     private long groupId;
 
-    @Column(name = "owner_name", nullable = false, length = 10)
-    private String ownerName;
+    @ManyToOne
+    @JoinColumn(name = "owner_id", nullable = false)
+    private User ownerId;
 
     @Column(name = "favorite_area")
     private String favoriteArea;

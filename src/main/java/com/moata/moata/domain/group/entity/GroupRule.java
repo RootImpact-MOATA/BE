@@ -20,7 +20,7 @@ public class GroupRule {
 
     @ManyToOne
     @JoinColumn(name = "group_id", nullable = false)
-    private Group group;
+    private Group groupId;
 
     @Column(name = "washing_frequency", nullable = false, length = 30)
     private String washingFrequency;
@@ -31,6 +31,6 @@ public class GroupRule {
     @Column(name = "parking_location", nullable = false)
     private String parkingLocation;
 
-    @Column(name = "another", length = 5000)
-    private String another;
+    @Column(name = "etc", length = 5000)
+    private String etc;
 }

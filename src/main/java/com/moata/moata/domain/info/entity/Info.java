@@ -1,4 +1,4 @@
-package com.moata.moata.domain.notice.entity;
+package com.moata.moata.domain.info.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -8,15 +8,19 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@Table(name = "notice")
+@Table(name = "info")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Notice {
+public class Info {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "notice_id", nullable = false)
-    private long noticeId;
+    @Column(name = "info_id", nullable = false)
+    private long infoId;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", nullable = false)
+    private InfoType type;
 
     @Column(name = "title", nullable = false)
     private String title;

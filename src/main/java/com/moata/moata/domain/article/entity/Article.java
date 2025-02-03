@@ -1,5 +1,6 @@
 package com.moata.moata.domain.article.entity;
 
+import com.moata.moata.domain.group.entity.Group;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,10 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "article_id", nullable = false)
     private long articleId;
+
+    @ManyToOne
+    @JoinColumn(name = "group_id", nullable = false)
+    private Group groupId;
 
     @Column(name = "content", length = 10000)
     private String content;

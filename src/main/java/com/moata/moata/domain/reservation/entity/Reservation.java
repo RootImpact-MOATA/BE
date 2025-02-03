@@ -1,6 +1,7 @@
 package com.moata.moata.domain.reservation.entity;
 
 import com.moata.moata.domain.group.entity.Group;
+import com.moata.moata.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -24,10 +25,11 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "group_id", nullable = false)
-    private Group group;
+    private Group groupId;
 
-    @Column(name = "reserver_name", nullable = false, length = 10)
-    private String reserverName;
+    @ManyToOne
+    @JoinColumn(name = "reserver_id", nullable = false)
+    private User reserverId;
 
     @Column(name = "start_time", nullable = false)
     private LocalDateTime startTime;
@@ -38,8 +40,9 @@ public class Reservation {
     @Column(name = "is_ride_sharing", nullable = false)
     private Boolean isRideSharing;
 
-    @Column(name = "ride_sharing_role", length = 10)
-    private String rideSharingRole;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "ride_sharing_role")
+    private RideSharingRole rideSharingRole;
 
     @Column(name = "departure")
     private String departure;

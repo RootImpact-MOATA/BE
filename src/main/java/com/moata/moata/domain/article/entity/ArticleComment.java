@@ -23,7 +23,7 @@ public class ArticleComment {
 
     @ManyToOne
     @JoinColumn(name = "article_id", nullable = false)
-    private Article article;
+    private Article articleId;
 
     @Column(name = "content", length = 10000)
     private String content;
