@@ -23,6 +23,9 @@ public class Group {
     @JoinColumn(name = "owner_id", nullable = false)
     private User ownerId;
 
+    @Column(name = "has_car", nullable = false)
+    private Boolean hasCar;
+
     @Column(name = "favorite_area")
     private String favoriteArea;
 
@@ -37,12 +40,17 @@ public class Group {
     @Column(name = "car_type")
     private String carType;
 
+    @Column(name = "car_model_name")
+    private String carModelName;
+
     @Builder
-    public Group(User ownerId, String favoriteArea, int coOwnerMax, int carUseFrequency, String carType) {
+    public Group(User ownerId, Boolean hasCar, String favoriteArea, int coOwnerMax, int carUseFrequency, String carType, String carModelName) {
         this.ownerId = ownerId;
+        this.hasCar = hasCar;
         this.favoriteArea = favoriteArea;
         this.coOwnerMax = coOwnerMax;
         this.carUseFrequency = carUseFrequency;
         this.carType = carType;
+        this.carModelName = carModelName;
     }
 }
