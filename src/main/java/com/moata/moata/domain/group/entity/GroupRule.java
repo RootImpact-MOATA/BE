@@ -1,10 +1,7 @@
 package com.moata.moata.domain.group.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
@@ -33,4 +30,12 @@ public class GroupRule {
 
     @Column(name = "etc", length = 5000)
     private String etc;
+
+    @Builder
+    public GroupRule(String washingFrequency, String fuelManager, String parkingLocation, String etc) {
+        this.washingFrequency = washingFrequency;
+        this.fuelManager = fuelManager;
+        this.parkingLocation = parkingLocation;
+        this.etc = etc;
+    }
 }

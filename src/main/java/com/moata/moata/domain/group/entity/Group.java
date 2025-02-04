@@ -2,10 +2,7 @@ package com.moata.moata.domain.group.entity;
 
 import com.moata.moata.domain.user.entity.User;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 
@@ -39,4 +36,13 @@ public class Group {
 
     @Column(name = "car_type")
     private String carType;
+
+    @Builder
+    public Group(User ownerId, String favoriteArea, int coOwnerMax, int carUseFrequency, String carType) {
+        this.ownerId = ownerId;
+        this.favoriteArea = favoriteArea;
+        this.coOwnerMax = coOwnerMax;
+        this.carUseFrequency = carUseFrequency;
+        this.carType = carType;
+    }
 }

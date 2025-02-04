@@ -1,12 +1,10 @@
 package com.moata.moata.domain.reservation.entity;
 
+import com.moata.moata.constant.RideSharingRole;
 import com.moata.moata.domain.group.entity.Group;
 import com.moata.moata.domain.user.entity.User;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -48,4 +46,17 @@ public class Reservation {
 
     @Column(name = "destination")
     private String destination;
+
+    @Builder
+    public Reservation(Group groupId, User reserverId, LocalDateTime startTime, LocalDateTime endTime, Boolean isRideSharing, RideSharingRole rideSharingRole, String departure, String destination) {
+        this.groupId = groupId;
+        this.reserverId = reserverId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.isRideSharing = isRideSharing;
+        this.rideSharingRole = rideSharingRole;
+        this.departure = departure;
+        this.destination = destination;
+
+    }
 }

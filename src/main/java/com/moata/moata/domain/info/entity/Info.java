@@ -1,10 +1,8 @@
 package com.moata.moata.domain.info.entity;
 
+import com.moata.moata.constant.InfoType;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter

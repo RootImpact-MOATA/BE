@@ -1,10 +1,7 @@
 package com.moata.moata.domain.user.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
@@ -29,4 +26,12 @@ public class User {
 
     @Column(name = "location", nullable = false)
     private String location;
+
+    @Builder
+    public User(String name, long phone, String telco, String location) {
+        this.name = name;
+        this.phone = phone;
+        this.telco = telco;
+        this.location = location;
+    }
 }

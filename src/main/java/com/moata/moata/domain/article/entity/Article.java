@@ -2,10 +2,7 @@ package com.moata.moata.domain.article.entity;
 
 import com.moata.moata.domain.group.entity.Group;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -33,4 +30,12 @@ public class Article {
 
     @Column(name = "created_by", nullable = false, length = 10)
     private String createdBy;
+
+    @Builder
+    public Article(Group groupId, String content, LocalDateTime createdAt, String createdBy) {
+        this.groupId = groupId;
+        this.content = content;
+        this.createdAt = createdAt;
+        this.createdBy = createdBy;
+    }
 }
