@@ -17,7 +17,7 @@ public class ReservationResponse {
     private String departure;
     private String destination;
 
-    public ReservationResponse from(Reservation reservation, String rideSharingRole) {
+    public ReservationResponse from(Reservation reservation) {
         return ReservationResponse.builder()
                 .reservationId(reservation.getReservationId())
                 .groupId(reservation.getGroupId().getGroupId())
@@ -25,7 +25,7 @@ public class ReservationResponse {
                 .startTime(reservation.getStartTime().toString())
                 .endTime(reservation.getEndTime().toString())
                 .isRideSharing(reservation.getIsRideSharing())
-                .rideSharingRole(rideSharingRole)
+                .rideSharingRole(reservation.getRideSharingRole().name())
                 .departure(reservation.getDeparture())
                 .destination(reservation.getDestination())
                 .build();

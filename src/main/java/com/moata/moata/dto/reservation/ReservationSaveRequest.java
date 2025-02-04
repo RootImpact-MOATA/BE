@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @Data
 public class ReservationSaveRequest {
     private long groupId;
-    private long reserverId;
     private String startTime;
     private String endTime;
     private Boolean isRideSharing;
@@ -19,14 +18,14 @@ public class ReservationSaveRequest {
     private String departure;
     private String destination;
 
-    public Reservation toModel(Group group, User reserver, RideSharingRole rideSharingRole, String departure, String destination) {
+    public Reservation toModel(Group group, User reserver) {
         return Reservation.builder()
                 .groupId(group)
                 .reserverId(reserver)
                 .startTime(LocalDateTime.parse(startTime))
                 .endTime(LocalDateTime.parse(endTime))
                 .isRideSharing(isRideSharing)
-                .rideSharingRole(rideSharingRole)
+                .rideSharingRole(RideSharingRole.valueOf(rideSharingRole))
                 .departure(departure)
                 .destination(destination)
                 .build();
