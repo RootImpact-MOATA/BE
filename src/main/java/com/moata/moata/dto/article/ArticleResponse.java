@@ -14,8 +14,8 @@ public class ArticleResponse {
     private LocalDateTime createdAt;
     private String createdBy;
 
-    public ArticleDetailResponse from(Article article) {
-        return ArticleDetailResponse.builder()
+    public ArticleResponse from(Article article) {
+        return ArticleResponse.builder()
                 .articleId(article.getArticleId())
                 .content(article.getContent())
                 .createdAt(article.getCreatedAt())
