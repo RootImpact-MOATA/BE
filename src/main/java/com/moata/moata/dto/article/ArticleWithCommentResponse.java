@@ -9,15 +9,15 @@ import java.util.List;
 
 @Data
 @Builder
-public class ArticleDetailResponse {
+public class ArticleWithCommentResponse  {
     private long articleId;
     private String content;
     private LocalDateTime createdAt;
     private String createdBy;
     private List<ArticleCommentResponse> comments;
 
-    public ArticleDetailResponse from(Article article, List<ArticleCommentResponse> commmentList) {
-        return ArticleDetailResponse.builder()
+    public ArticleWithCommentResponse from(Article article, List<ArticleCommentResponse> commmentList) {
+        return ArticleWithCommentResponse.builder()
                 .articleId(article.getArticleId())
                 .content(article.getContent())
                 .createdAt(article.getCreatedAt())
