@@ -8,9 +8,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class ArticleCommentSaveRequest {
-    private long articleId;
     private String content;
-    private LocalDateTime createdAt;
     private String createdBy;
 
     public ArticleComment toModel(Article article) {
