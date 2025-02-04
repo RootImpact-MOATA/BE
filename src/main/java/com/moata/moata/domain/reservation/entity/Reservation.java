@@ -47,8 +47,11 @@ public class Reservation {
     @Column(name = "destination")
     private String destination;
 
+    @Column(name = "pickup_point")
+    private String pickupPoint;
+
     @Builder
-    public Reservation(Group groupId, User reserverId, LocalDateTime startTime, LocalDateTime endTime, Boolean isRideSharing, RideSharingRole rideSharingRole, String departure, String destination) {
+    public Reservation(Group groupId, User reserverId, LocalDateTime startTime, LocalDateTime endTime, Boolean isRideSharing, RideSharingRole rideSharingRole, String departure, String destination, String pickupPoint) {
         this.groupId = groupId;
         this.reserverId = reserverId;
         this.startTime = startTime;
@@ -57,6 +60,6 @@ public class Reservation {
         this.rideSharingRole = rideSharingRole;
         this.departure = departure;
         this.destination = destination;
-
+        this.pickupPoint = pickupPoint;
     }
 }
