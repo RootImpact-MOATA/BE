@@ -8,6 +8,7 @@ import lombok.Data;
 @Builder
 public class GroupResponse {
     private long groupId;
+    private long ownerId;
     private String favoriteArea;
     private int coOwnerMax;
     private int carUseFrequency;
@@ -16,6 +17,7 @@ public class GroupResponse {
     public GroupResponse from(Group group) {
         return GroupResponse.builder()
                 .groupId(group.getGroupId())
+                .ownerId(group.getOwnerId().getUserId())
                 .favoriteArea(group.getFavoriteArea())
                 .coOwnerMax(group.getCoOwnerMax())
                 .carUseFrequency(group.getCarUseFrequency())
