@@ -8,7 +8,6 @@ import org.hibernate.annotations.DynamicInsert;
 
 @Entity
 @Getter
-@Builder
 @Table(name = "user_group")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -37,4 +36,13 @@ public class Group {
 
     @Column(name = "car_type")
     private String carType;
+
+    @Builder
+    public Group(User ownerId, String favoriteArea, int coOwnerMax, int carUseFrequency, String carType) {
+        this.ownerId = ownerId;
+        this.favoriteArea = favoriteArea;
+        this.coOwnerMax = coOwnerMax;
+        this.carUseFrequency = carUseFrequency;
+        this.carType = carType;
+    }
 }

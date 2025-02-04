@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Builder
 @Table(name = "reservation")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -47,4 +46,17 @@ public class Reservation {
 
     @Column(name = "destination")
     private String destination;
+
+    @Builder
+    public Reservation(Group groupId, User reserverId, LocalDateTime startTime, LocalDateTime endTime, Boolean isRideSharing, RideSharingRole rideSharingRole, String departure, String destination) {
+        this.groupId = groupId;
+        this.reserverId = reserverId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.isRideSharing = isRideSharing;
+        this.rideSharingRole = rideSharingRole;
+        this.departure = departure;
+        this.destination = destination;
+
+    }
 }

@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Builder
 @Table(name = "article")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -31,4 +30,12 @@ public class Article {
 
     @Column(name = "created_by", nullable = false, length = 10)
     private String createdBy;
+
+    @Builder
+    public Article(Group groupId, String content, LocalDateTime createdAt, String createdBy) {
+        this.groupId = groupId;
+        this.content = content;
+        this.createdAt = createdAt;
+        this.createdBy = createdBy;
+    }
 }

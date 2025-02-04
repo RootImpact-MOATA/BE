@@ -8,7 +8,6 @@ import lombok.*;
 @Table(name = "user")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Builder
 public class User {
 
     @Id
@@ -27,4 +26,12 @@ public class User {
 
     @Column(name = "location", nullable = false)
     private String location;
+
+    @Builder
+    public User(String name, long phone, String telco, String location) {
+        this.name = name;
+        this.phone = phone;
+        this.telco = telco;
+        this.location = location;
+    }
 }

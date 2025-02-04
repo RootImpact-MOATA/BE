@@ -5,7 +5,6 @@ import lombok.*;
 
 @Entity
 @Getter
-@Builder
 @Table(name = "group_rule")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -31,4 +30,12 @@ public class GroupRule {
 
     @Column(name = "etc", length = 5000)
     private String etc;
+
+    @Builder
+    public GroupRule(String washingFrequency, String fuelManager, String parkingLocation, String etc) {
+        this.washingFrequency = washingFrequency;
+        this.fuelManager = fuelManager;
+        this.parkingLocation = parkingLocation;
+        this.etc = etc;
+    }
 }
