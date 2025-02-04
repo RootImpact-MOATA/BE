@@ -6,7 +6,6 @@ import lombok.Data;
 
 @Data
 public class GroupRuleSaveRequest {
-    private long groupId;
     private String washingFrequency;
     private String fuelManager;
     private String parkingLocation;
@@ -14,7 +13,6 @@ public class GroupRuleSaveRequest {
 
     public GroupRule toModel(Group group) {
         return GroupRule.builder()
-                .groupId(group)
                 .washingFrequency(washingFrequency)
                 .fuelManager(fuelManager)
                 .parkingLocation(parkingLocation)
