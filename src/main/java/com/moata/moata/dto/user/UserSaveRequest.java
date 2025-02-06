@@ -1,6 +1,6 @@
 package com.moata.moata.dto.user;
 
-import com.moata.moata.domain.user.entity.User;
+import com.moata.moata.entity.user.User;
 import lombok.Data;
 
 @Data

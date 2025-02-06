@@ -1,7 +1,7 @@
 package com.moata.moata.dto.group;
 
-import com.moata.moata.domain.group.entity.Group;
-import com.moata.moata.domain.user.entity.User;
+import com.moata.moata.entity.group.Group;
+import com.moata.moata.entity.user.User;
 import lombok.Data;
 
 @Data

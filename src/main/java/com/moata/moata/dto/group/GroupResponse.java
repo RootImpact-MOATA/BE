@@ -1,6 +1,6 @@
 package com.moata.moata.dto.group;
 
-import com.moata.moata.domain.group.entity.Group;
+import com.moata.moata.entity.group.Group;
 import lombok.Builder;
 import lombok.Data;
 

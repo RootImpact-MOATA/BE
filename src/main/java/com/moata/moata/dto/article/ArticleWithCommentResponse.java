@@ -1,6 +1,6 @@
 package com.moata.moata.dto.article;
 
-import com.moata.moata.domain.article.entity.Article;
+import com.moata.moata.entity.article.Article;
 import lombok.Builder;
 import lombok.Data;
 

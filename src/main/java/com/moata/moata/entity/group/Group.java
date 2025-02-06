@@ -1,6 +1,6 @@
-package com.moata.moata.domain.group.entity;
+package com.moata.moata.entity.group;
 
-import com.moata.moata.domain.user.entity.User;
+import com.moata.moata.entity.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;

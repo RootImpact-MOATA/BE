@@ -1,9 +1,9 @@
 package com.moata.moata.dto.reservation;
 
 import com.moata.moata.constant.RideSharingRole;
-import com.moata.moata.domain.group.entity.Group;
-import com.moata.moata.domain.reservation.entity.Reservation;
-import com.moata.moata.domain.user.entity.User;
+import com.moata.moata.entity.group.Group;
+import com.moata.moata.entity.reservation.Reservation;
+import com.moata.moata.entity.user.User;
 import lombok.Data;
 
 import java.time.LocalDateTime;

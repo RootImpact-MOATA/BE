@@ -1,6 +1,6 @@
 package com.moata.moata.dto.info;
 
-import com.moata.moata.domain.info.entity.Info;
+import com.moata.moata.entity.info.Info;
 import com.moata.moata.constant.InfoType;
 import lombok.Builder;
 import lombok.Data;
