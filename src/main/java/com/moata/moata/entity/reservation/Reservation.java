@@ -1,8 +1,8 @@
-package com.moata.moata.domain.reservation.entity;
+package com.moata.moata.entity.reservation;
 
 import com.moata.moata.constant.RideSharingRole;
-import com.moata.moata.domain.group.entity.Group;
-import com.moata.moata.domain.user.entity.User;
+import com.moata.moata.entity.group.Group;
+import com.moata.moata.entity.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 

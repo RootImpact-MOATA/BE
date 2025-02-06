@@ -1,6 +1,6 @@
-package com.moata.moata.domain.article.entity;
+package com.moata.moata.entity.article;
 
-import com.moata.moata.domain.group.entity.Group;
+import com.moata.moata.entity.group.Group;
 import jakarta.persistence.*;
 import lombok.*;
 

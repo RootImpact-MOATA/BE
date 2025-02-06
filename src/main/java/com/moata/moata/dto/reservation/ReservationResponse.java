@@ -1,6 +1,6 @@
 package com.moata.moata.dto.reservation;
 
-import com.moata.moata.domain.reservation.entity.Reservation;
+import com.moata.moata.entity.reservation.Reservation;
 import lombok.Builder;
 import lombok.Data;
 

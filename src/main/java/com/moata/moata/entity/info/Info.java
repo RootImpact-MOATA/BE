@@ -1,4 +1,4 @@
-package com.moata.moata.domain.info.entity;
+package com.moata.moata.entity.info;
 
 import com.moata.moata.constant.InfoType;
 import jakarta.persistence.*;

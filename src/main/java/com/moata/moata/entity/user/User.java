@@ -1,4 +1,4 @@
-package com.moata.moata.domain.user.entity;
+package com.moata.moata.entity.user;
 
 import jakarta.persistence.*;
 import lombok.*;

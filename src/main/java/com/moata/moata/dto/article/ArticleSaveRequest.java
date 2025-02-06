@@ -1,7 +1,7 @@
 package com.moata.moata.dto.article;
 
-import com.moata.moata.domain.article.entity.Article;
-import com.moata.moata.domain.group.entity.Group;
+import com.moata.moata.entity.article.Article;
+import com.moata.moata.entity.group.Group;
 import lombok.Data;
 
 import java.time.LocalDateTime;
