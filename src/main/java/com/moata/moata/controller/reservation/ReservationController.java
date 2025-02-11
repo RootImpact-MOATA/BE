@@ -14,23 +14,23 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/v1/reservation")
+@RequestMapping("/reservation")
 public class ReservationController {
     private final ReservationService reservationService;
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public ResponseEntity<List<ReservationResponse>> getAllReservations() {
         return ResponseEntity.ok().body(reservationService.findAll());
     }
 
-    @GetMapping("search")
+    @GetMapping("/search")
     public ResponseEntity<List<ReservationResponse>> searchReservation(@RequestParam(name = "startDate", required = false) String startDate,
                                                @RequestParam(name = "endDate", required = false) String endDate,
                                                @RequestParam(name = "userId", required = false, defaultValue = "-1") Long userId) {
         return ResponseEntity.ok().body(reservationService.searchReservation(startDate, endDate, userId));
     }
 
-    @GetMapping("my")
+    @GetMapping("/my")
     public ResponseEntity<List<ReservationResponse>> getMyReservations(@AuthenticationPrincipal long userId) {
         return ResponseEntity.ok().body(reservationService.findMy(userId));
     }
@@ -42,13 +42,13 @@ public class ReservationController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PostMapping("ridesharing")
+    @PostMapping("/ridesharing")
     public ResponseEntity<String> createRidesharing(@AuthenticationPrincipal long userId, ReservationRideSharingRequest rideSharingRequest) {
         reservationService.saveRidesharing(userId, rideSharingRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @DeleteMapping("{reservation_id}")
+    @DeleteMapping("/{reservation_id}")
     public ResponseEntity<String> deleteReservation(@PathVariable(name = "reservation_id") long reservationId) {
         reservationService.deleteReservation(reservationId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
