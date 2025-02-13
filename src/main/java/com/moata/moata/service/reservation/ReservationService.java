@@ -88,7 +88,7 @@ public class ReservationService {
     }
 
     public void saveRidesharing(long userId, ReservationRideSharingRequest saveRequest) {
-        Reservation reservation = reservationRepository.findById(saveRequest.getReservationId())
+        Reservation reservation = reservationRepository.findByReservationId(saveRequest.getReservationId())
                 .orElseThrow(() -> new NoSuchElementException("존재하지 않는 예약"));
 
         reservation.addRideSharing(saveRequest);

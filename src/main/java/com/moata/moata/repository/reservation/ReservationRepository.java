@@ -10,9 +10,11 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
+    Optional<Reservation> findByReservationId(long reservationId);
     List<Reservation> findByGroupIdIn(List<Group> groups);
     @Query("SELECT r FROM Reservation r WHERE " +
             "(COALESCE(:from, r.startTime) IS NULL OR r.startTime >= :from) " +
