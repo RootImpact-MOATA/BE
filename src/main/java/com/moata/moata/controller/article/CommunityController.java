@@ -78,7 +78,10 @@ public class CommunityController {
     }
 
     @PostMapping("/{article_id}/like")
-    public ResponseEntity<String> saveLike(@PathVariable("article_id") long articleId, @AuthenticationPrincipal Long userId) {
+    public ResponseEntity<String> saveLike(@RequestHeader("Authorization") String authorizationHeader, @PathVariable("article_id") long articleId) {
+        String token = authorizationHeader.replace("Bearer ", "");
+        Long userId = tokenProvider.getUserId(token);
+
         articleService.saveLike(articleId, userId);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
